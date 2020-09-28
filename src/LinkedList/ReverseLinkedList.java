@@ -42,8 +42,6 @@ public class ReverseLinkedList {
         }
         return lTemp.next;
     }
-
-
     /**
      * 划分链表
      * @param head
