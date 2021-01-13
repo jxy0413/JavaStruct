@@ -25,7 +25,7 @@ public class test03 {
     }
 }
 
-class ListNode{
+ class ListNode{
     int val;
     ListNode next = null;
     ListNode(int val) {
