@@ -7,12 +7,13 @@ public class JVMNote {
         result = x+y;
         return result;
     }
+    //Exception in thread "main" java.lang.StackOverflowError
     public static void main(String[] args) {
-         test2();
+         test1();
     }
 
     public static void test1(){
-        System.out.println("test1");
+       test1();
     }
 
     public static void test2(){
