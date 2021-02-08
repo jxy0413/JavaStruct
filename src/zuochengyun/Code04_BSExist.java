@@ -9,7 +9,7 @@ public class Code04_BSExist {
         int high = sortedArr.length-1;
         int mid = 0;
         while(low<=high){
-            mid = low+(high-low)>>1;
+            mid = low+((high-low)>>1);
             if(sortedArr[mid]==num){
                 return true;
             }else if(sortedArr[mid]>num){
