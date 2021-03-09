@@ -3,7 +3,7 @@ package juc;
 import java.util.concurrent.atomic.AtomicInteger;
 
 class Mydata{
-    volatile int  data = 0;
+    int  data = 0;
 
     public void addData(){
         this.data = 60;
@@ -37,22 +37,23 @@ class Mydata{
  */
 public class VolatileDemo {
     public static void main(String[] args) {
-          Mydata mydata = new Mydata();
-
-          for(int i=0;i<20;i++){
-              new Thread(()->{
-                   for(int j=1;j<=1000;j++){
-                       mydata.addPlusPlus();
-                       mydata.addAutomic();
-                   }
-              },String.valueOf(i)).start();
-          }
-          //需要等待上面20个线程全部计算完成后，再用main线程得到最终的结果值
-          while (Thread.activeCount()>2){
-              Thread.yield();
-          }
-          System.out.println(Thread.currentThread().getName()+" : "+mydata.data);
-          System.out.println(Thread.currentThread().getName()+" : "+mydata.atomicInteger);
+        seeOkByVolatile();
+//          Mydata mydata = new Mydata();
+//
+//          for(int i=0;i<20;i++){
+//              new Thread(()->{
+//                   for(int j=1;j<=1000;j++){
+//                       mydata.addPlusPlus();
+//                       mydata.addAutomic();
+//                   }
+//              },String.valueOf(i)).start();
+//          }
+//          //需要等待上面20个线程全部计算完成后，再用main线程得到最终的结果值
+//          while (Thread.activeCount()>2){
+//              Thread.yield();
+//          }
+//          System.out.println(Thread.currentThread().getName()+" : "+mydata.data);
+//          System.out.println(Thread.currentThread().getName()+" : "+mydata.atomicInteger);
     }
 
     public static void seeOkByVolatile(){

@@ -1,4 +1,4 @@
-package cn.bjfu.javaStruct.Sort;
+package cn.bjfu.javaStruct.leetcode.Sort;
 
 /**
  * Created by jxy on 2020/12/13 0013 10:15

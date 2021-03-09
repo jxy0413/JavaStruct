@@ -21,7 +21,7 @@ public class SingletonDemo {
     }
 
     public static void main(String[] args) {
-//        System.out.println(SingletonDemo.getInstance()==SingletonDemo.getInstance());
+        System.out.println(SingletonDemo.getInstance()==SingletonDemo.getInstance());
 //        System.out.println(SingletonDemo.getInstance()==SingletonDemo.getInstance());
 //        System.out.println(SingletonDemo.getInstance()==SingletonDemo.getInstance());
         //并发多线程后，情况发了很大的变化
