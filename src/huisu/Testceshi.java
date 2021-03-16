@@ -9,9 +9,6 @@ import com.sun.deploy.util.StringUtils;
  */
 public class Testceshi {
     
-    public static void main(String[] args) {
-        String str = null;
-        StringUtils
-    }
+
     
 }
