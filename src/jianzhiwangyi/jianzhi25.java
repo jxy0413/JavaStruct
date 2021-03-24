@@ -6,6 +6,7 @@
  */
 package jianzhiwangyi;
 
+
 /**
  * jianzhi25
  *
@@ -15,7 +16,7 @@ package jianzhiwangyi;
  * 请对此链表进行深拷贝，并返回拷贝后的头结点。（注意，输出结果中请不要返回参数中的节点引用，否则判题程序会直接返回空）
  */
 public class jianzhi25 {
-    public RandomListNode Clone(RandomListNode pHead) {
-    
-    }
+//    public RandomListNode Clone(RandomListNode pHead) {
+//        return null;
+//    }
 }
