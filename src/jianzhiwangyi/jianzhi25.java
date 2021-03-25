@@ -6,7 +6,6 @@
  */
 package jianzhiwangyi;
 
-
 /**
  * jianzhi25
  *
@@ -16,7 +15,51 @@ package jianzhiwangyi;
  * 请对此链表进行深拷贝，并返回拷贝后的头结点。（注意，输出结果中请不要返回参数中的节点引用，否则判题程序会直接返回空）
  */
 public class jianzhi25 {
-//    public RandomListNode Clone(RandomListNode pHead) {
-//        return null;
-//    }
+    public RandomListNode Clone(RandomListNode pHead) {
+         if(pHead==null){
+             return null;
+         }
+         //复制链表
+         RandomListNode currentNode = pHead;
+         while (currentNode!=null){
+             RandomListNode newCurrentNode = new RandomListNode(currentNode.lebel);
+             RandomListNode nextNode = currentNode.next;
+             currentNode.next = newCurrentNode;
+             newCurrentNode.next = nextNode;
+             currentNode = nextNode;
+         }
+         //复制链表
+         currentNode = pHead;
+         while (currentNode!=null){
+             if(currentNode.random==null){
+                 currentNode.next.random = null;
+             }else{
+                 currentNode.next.random = currentNode.random.next;
+             }
+             currentNode = currentNode.next.next;
+         }
+         //拆分链表
+         currentNode = pHead;
+         RandomListNode clonePre =  pHead.next;
+         while (currentNode!=null){
+             RandomListNode cloneNode = currentNode.next;
+             currentNode.next = cloneNode.next;
+             if(cloneNode.next==null){
+                 cloneNode.next = null;
+             }else{
+                 cloneNode.next = cloneNode.next.next;
+             }
+             currentNode = currentNode.next;
+         }
+         return clonePre;
+    }
+}
+class RandomListNode{
+    int lebel;
+    RandomListNode next = null;
+    RandomListNode random = null;
+    
+    RandomListNode(int label){
+        this.lebel = label;
+    }
 }
