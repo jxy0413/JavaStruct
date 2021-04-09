@@ -38,7 +38,7 @@ public class leetcode3 {
         if(pattern.length()!=string.length){
             return false;
         }
-        HashMap<Character,String> map = new HashMap<>();
+        HashMap<Character,String> map = new HashMap();
         for(int i=0;i<pattern.length();i++){
             char tmp = pattern.charAt(i);
             //key存在
