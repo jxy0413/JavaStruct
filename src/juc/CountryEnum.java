@@ -1,7 +1,5 @@
 package juc;
 
-import lombok.Data;
-import lombok.Getter;
 
 /**
  * @Author jiaxiangyu

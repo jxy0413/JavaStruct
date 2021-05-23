@@ -1,6 +1,5 @@
 package juc;
 
-import lombok.Synchronized;
 
 import java.util.concurrent.TimeUnit;
 
