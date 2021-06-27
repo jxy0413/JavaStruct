@@ -1,6 +1,7 @@
 package changkao;
 
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author jiaxiangyu
@@ -33,11 +34,18 @@ public class VolatileDemo {
 //        //System.out.println("xunhuanzhong......");
 //      }
 //      System.out.println(Thread.currentThread().getName()+"\t mission is over");
-        MyData myData = new MyData();
+    /**
+     * 为什么volatile不保证原子性
+     * 多个线程会覆盖
+     * 如果解决原子性
+     *    加sync
+     */
+    MyData myData = new MyData();
         for(int i=0; i<20;i++){
           new Thread(()->{
-             for(int j=0;j<=1000;j++){
+             for(int j=0;j<1000;j++){
                myData.addPlusPuls();
+               myData.addAtomic();
              }
           },String.valueOf(i+1)).start();
         }
@@ -46,10 +54,11 @@ public class VolatileDemo {
           Thread.yield();
         }
         System.out.println(Thread.currentThread().getName()+"\t finally number value: " + myData.number);
+        System.out.println(Thread.currentThread().getName()+"\t finally number value: " + myData.atomicInteger);
   }
 }
 
-class MyData{
+class MyData{  //Mydata.java ---> Mydata.class ----> jvm
   volatile int number = 0;
 
   public void addTo60(){
@@ -58,5 +67,11 @@ class MyData{
 
   public void  addPlusPuls(){
     number++;
+  }
+
+  AtomicInteger atomicInteger = new AtomicInteger(0);
+
+  public void addAtomic(){
+    atomicInteger.getAndIncrement();
   }
 }
