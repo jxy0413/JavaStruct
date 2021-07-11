@@ -25,10 +25,10 @@ public class jianzhi3 {
        return list;
   }
 }
-class ListNode{
+class ListNode1{
       int val;
-      ListNode next = null;
-      ListNode(int val) {
+      ListNode1 next = null;
+      ListNode1(int val) {
       this.val = val;
     }
 }

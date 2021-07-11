@@ -16,7 +16,7 @@ public class ThreadPool {
 
   public static void main(String[] args) {
     ExecutorService executorService = new ThreadPoolExecutor(
-        5,5,1l, TimeUnit.SECONDS,
+        5,5,1L, TimeUnit.SECONDS,
         new LinkedBlockingDeque<>(100),
         Executors.defaultThreadFactory(),
         new AbortPolicy()
