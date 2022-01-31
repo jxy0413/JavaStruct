@@ -31,4 +31,12 @@ public class QuickBak {
     }
   }
 
+  public static void main(String[] args) {
+    int arr[] = {1,5,3,2,5};
+    quickSort(arr, 0 ,arr.length-1);
+    for(int i : arr){
+      System.out.println(i);
+    }
+  }
+
 }
