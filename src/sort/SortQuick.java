@@ -32,7 +32,7 @@ public class SortQuick {
      }
 
   public static void main(String[] args) {
-    int arr [] = {1,5,3,2,6,4};
+    int arr [] = {2,4,1,8,9};
     sortQuick(arr, 0, arr.length-1);
     for(int i : arr){
       System.out.println(i);
